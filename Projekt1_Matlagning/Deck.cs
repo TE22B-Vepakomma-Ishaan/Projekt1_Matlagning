@@ -26,7 +26,7 @@ public class Deck
         for (int i = 1; i <= 8; i++)
         {
 
-            cards.Add(new Card { Suit = "Special", Num = 0 });
+            cards.Add(new SpecialCard());
 
         }
 
@@ -44,5 +44,5 @@ public class Deck
         }
     }
 
-    
+
 }

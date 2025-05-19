@@ -12,3 +12,4 @@ c:\Users\ishaan.vepakomma\Documents\Programmering_2\Projekt1_Matlagning\Projekt1
 c:\Users\ishaan.vepakomma\Documents\Programmering_2\Projekt1_Matlagning\Projekt1_Matlagning\obj\Debug\net8.0\Projekt1_Matlagning.pdb
 c:\Users\ishaan.vepakomma\Documents\Programmering_2\Projekt1_Matlagning\Projekt1_Matlagning\obj\Debug\net8.0\Projekt1_Matlagning.genruntimeconfig.cache
 c:\Users\ishaan.vepakomma\Documents\Programmering_2\Projekt1_Matlagning\Projekt1_Matlagning\obj\Debug\net8.0\ref\Projekt1_Matlagning.dll
+c:\Users\ishaan.vepakomma\Documents\Programmering_2\Projekt1_Matlagning\Projekt1_Matlagning\obj\Debug\net8.0\Projekt1_Matlagning.sourcelink.json

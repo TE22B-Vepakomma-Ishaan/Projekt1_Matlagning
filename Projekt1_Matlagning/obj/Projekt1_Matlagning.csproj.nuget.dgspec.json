@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ishaan.vepakomma\\Documents\\Programmering_2\\Projekt1_Matlagning\\Projekt1_Matlagning\\Projekt1_Matlagning.csproj": {}
+    "c:\\Users\\ishaan.vepakomma\\Documents\\Programmering_2\\Projekt1_Matlagning\\Projekt1_Matlagning\\Projekt1_Matlagning.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ishaan.vepakomma\\Documents\\Programmering_2\\Projekt1_Matlagning\\Projekt1_Matlagning\\Projekt1_Matlagning.csproj": {
+    "c:\\Users\\ishaan.vepakomma\\Documents\\Programmering_2\\Projekt1_Matlagning\\Projekt1_Matlagning\\Projekt1_Matlagning.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ishaan.vepakomma\\Documents\\Programmering_2\\Projekt1_Matlagning\\Projekt1_Matlagning\\Projekt1_Matlagning.csproj",
+        "projectUniqueName": "c:\\Users\\ishaan.vepakomma\\Documents\\Programmering_2\\Projekt1_Matlagning\\Projekt1_Matlagning\\Projekt1_Matlagning.csproj",
         "projectName": "Projekt1_Matlagning",
-        "projectPath": "C:\\Users\\ishaan.vepakomma\\Documents\\Programmering_2\\Projekt1_Matlagning\\Projekt1_Matlagning\\Projekt1_Matlagning.csproj",
+        "projectPath": "c:\\Users\\ishaan.vepakomma\\Documents\\Programmering_2\\Projekt1_Matlagning\\Projekt1_Matlagning\\Projekt1_Matlagning.csproj",
         "packagesPath": "C:\\Users\\ishaan.vepakomma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ishaan.vepakomma\\Documents\\Programmering_2\\Projekt1_Matlagning\\Projekt1_Matlagning\\obj\\",
+        "outputPath": "c:\\Users\\ishaan.vepakomma\\Documents\\Programmering_2\\Projekt1_Matlagning\\Projekt1_Matlagning\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
