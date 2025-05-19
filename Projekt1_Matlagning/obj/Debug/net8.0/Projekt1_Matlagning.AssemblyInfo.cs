@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Projekt1_Matlagning")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d01ad466460fcdd84a1ed270019e84670ac92841")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64668224f335f0cd1803948885924eb495d92d7a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Projekt1_Matlagning")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Projekt1_Matlagning")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

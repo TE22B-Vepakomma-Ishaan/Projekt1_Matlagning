@@ -31,12 +31,12 @@ public class Card
             _ => "?"
         };
 
-        return $"𝖫{z}{x}⅂";
+        return $"[{z} {x}]";
     }
 
     public static string CardBack()
     {
-        return "𝖫###⅂";
+        return "[###]";
     }
 
 

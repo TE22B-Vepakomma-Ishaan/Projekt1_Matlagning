@@ -14,6 +14,7 @@ public class Playmat
         Player player = new();
         Player opponent = new();
 
+
         for (int i = 0; i < 3; i++)
         {
 
@@ -54,10 +55,10 @@ public class Playmat
                     if (player.MyHand.Count > 0)
                     {
                         Card p = player.MyHand[x];
+                        player.Score += player.MyHand[x].Num;
                         player.MyHand.RemoveAt(x);
 
                         System.Console.WriteLine($"\nYou played: {p.CardFront}");
-
 
                     }
                     break;
@@ -76,16 +77,18 @@ public class Playmat
         System.Console.WriteLine("┌───────────────────────── Opponent's Hand ───────────────────────┐");
         foreach (var _ in opponent.MyHand.Take(2))
         {
-            Console.Write(Card.CardBack() + " ");
+            Console.Write(" " + Card.CardBack());
         }
         foreach (var c in opponent.MyHand.Skip(2).Take(3))
         {
-            Console.Write(c.CardFront() + " ");
+            Console.Write(" " + c.CardFront());
         }
         System.Console.WriteLine("\n└─────────────────────────────────────────────────────────────────┘");
 
 
         System.Console.WriteLine("");
+        System.Console.WriteLine($"Your score is: {player.Score}");
+        System.Console.WriteLine();
 
 
         System.Console.WriteLine("┌────────────────────────── Your Hand ────────────────────────────┐");
@@ -95,11 +98,11 @@ public class Playmat
             string z = player.MyHand[i].CardFront();
             if (i == x)
             {
-                System.Console.WriteLine($"^{z}^ ");
+                System.Console.Write($"{" "}^{z}^ ");
             }
             else
             {
-                System.Console.WriteLine(z);
+                System.Console.Write(" "+ z);
             }
         }
         System.Console.WriteLine("\n└─────────────────────────────────────────────────────────────────┘");

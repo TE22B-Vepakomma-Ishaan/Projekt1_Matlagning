@@ -14,7 +14,7 @@ public class Deck
 
     private void CreateDeck()
     {
-        string[] suits = { "Spade", "Heart", "Diamond", "Club" };
+        string[] suits = {"Spade", "Club", "Diamond", "Heart" };
 
         foreach (string suit in suits)
         {
