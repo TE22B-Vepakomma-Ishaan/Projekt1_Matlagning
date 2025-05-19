@@ -12,7 +12,8 @@ public class Card
     {
 
         string x = Num switch
-        {
+        {   
+            0 => "S",
             1 => "A",
             11 => "J",
             12 => "Q",
