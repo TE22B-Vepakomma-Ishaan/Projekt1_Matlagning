@@ -4,11 +4,17 @@ namespace Projekt1_Matlagning;
 
 public class Player
 {
-    List<Card> MyHand = new();
+    public List<Card> MyHand = new();
 
-    public void PlayCard()
+
+    public void RecieveCard(Card card)
     {
-        
+        MyHand.Add(card);
+    }
+    public void PlayCard()
+    {   
+
+
     }
 
     public void PassTurn()

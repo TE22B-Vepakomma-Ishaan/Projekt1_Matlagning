@@ -4,15 +4,15 @@ namespace Projekt1_Matlagning;
 
 public class Card
 {
-    public string Suit { get; set; }
+    public string Suit;
 
-    public int Num { get; set; }
+    public int Num;
 
-    public void CardRender()
+    public string CardFront()
     {
 
         string x = Num switch
-        {   
+        {
             0 => "S",
             1 => "A",
             11 => "J",
@@ -28,8 +28,17 @@ public class Card
             "Diamond" => "♦",
             "Heart" => "♥",
             "Special" => "🏶",
-            
+            _ => "?"
         };
-     
+
+        return $"𝖫{z}{x}⅂";
     }
+
+    public static string CardBack()
+    {
+        return "𝖫###⅂";
+    }
+
+
+
 }
