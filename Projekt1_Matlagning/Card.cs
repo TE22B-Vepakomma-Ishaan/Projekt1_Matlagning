@@ -4,9 +4,9 @@ namespace Projekt1_Matlagning;
 
 public class Card
 {
-    public string Suit;
+    public string Suit { get; set; }
 
-    public int Num;
+    public int Num { get; set; }
 
     public string CardFront()
     {

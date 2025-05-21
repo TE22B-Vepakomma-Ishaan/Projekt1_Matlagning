@@ -15,7 +15,7 @@ public class Playmat
         Player opponent = new();
 
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 14; i++)
         {
 
             player.RecieveCard(deck.cards[0]);
@@ -54,11 +54,19 @@ public class Playmat
                 case ConsoleKey.Enter:
                     if (player.MyHand.Count > 0)
                     {
-                        Card p = player.MyHand[x];
-                        player.Score += player.MyHand[x].Num;
-                        player.MyHand.RemoveAt(x);
+                        if (player.MyHand[x].Num != 0)
+                        {
+                            Card p = player.MyHand[x];
+                            player.Score += player.MyHand[x].Num;
+                            player.MyHand.RemoveAt(x);
 
-                        System.Console.WriteLine($"\nYou played: {p.CardFront}");
+                            System.Console.WriteLine($"\nYou played: {p.CardFront}");
+
+                        }
+                        else
+                        {
+                            
+                        }
 
                     }
                     break;
@@ -75,13 +83,14 @@ public class Playmat
     public void Render(Player player, Player opponent, int x)
     {
         System.Console.WriteLine("┌───────────────────────── Opponent's Hand ───────────────────────┐");
-        foreach (var _ in opponent.MyHand.Take(2))
+        for (int i = 0; i < 2; i++)
         {
             Console.Write(" " + Card.CardBack());
         }
-        foreach (var c in opponent.MyHand.Skip(2).Take(3))
+        for (int i = 2; i < opponent.MyHand.Count; i++)
         {
-            Console.Write(" " + c.CardFront());
+            string z = opponent.MyHand[i].CardFront();
+            System.Console.Write(" " + z);
         }
         System.Console.WriteLine("\n└─────────────────────────────────────────────────────────────────┘");
 
@@ -99,13 +108,30 @@ public class Playmat
             if (i == x)
             {
                 System.Console.Write($"{" "}^{z}^ ");
+
             }
             else
             {
-                System.Console.Write(" "+ z);
+                System.Console.Write(" " + z);
             }
         }
         System.Console.WriteLine("\n└─────────────────────────────────────────────────────────────────┘");
         System.Console.WriteLine("Use ◄ ► to move. Press Enter to play. Esc to quit.");
+        System.Console.WriteLine();
+
+        Card SPCard = player.MyHand[x];
+
+        if (SPCard is SpecialCard specialCard)
+        {
+            string Desc = specialCard.SP switch
+            {
+                1 => "Steal a random card from your opponent.",
+                2 => "Shows top three cards in the deck; can select 1.",
+                3 => "Swap one card of choice with opponent.",
+                _ => "?"
+            };
+
+            Console.WriteLine($" -- Special Card Effect: {Desc} --");
+        }
     }
 }
