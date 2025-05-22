@@ -2,15 +2,11 @@ using System;
 
 namespace Projekt1_Matlagning;
 
+// Represents player object. is parent class for different types of players
 public class Player
 {
     protected List<Card> dealtCards = new();
     public int scoreAttribute = 0;
-
-    protected void Render(int index)
-    {
-
-    }
 
     public int GetCount()
     {
@@ -31,10 +27,16 @@ public class Player
     {
         dealtCards.Add(card);
     }
+
+    // ------Shell for Child to inherit -----
+    protected void Render(int index)
+    {
+
+    }
     protected void PlayCard()
-    {   
+    {
 
 
     }
-
+    // -------------------------------------
 }

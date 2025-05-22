@@ -2,6 +2,7 @@ using System;
 
 namespace Projekt1_Matlagning;
 
+// This class represents a specific card in a deck.
 public class Card
 {
     protected string suitAttribute;
@@ -19,7 +20,8 @@ public class Card
 
     }
 
-    
+    // Returns value of any given cards Suit and Number. Every royal gets their designated letter; Every suit gets their unicode symbol. Displays a cards information in a string (front face of a card).
+
     public string CardFront()
     {
 
@@ -46,6 +48,7 @@ public class Card
         return $"[{suitSymbol} {numberSymbol}]";
     }
 
+    //Function called to render the 'back' of the card
     public static string CardBack()
     {
         return "[###]";
@@ -59,7 +62,7 @@ public class Card
 
         }
         return 0;
-      
+
     }
 
 

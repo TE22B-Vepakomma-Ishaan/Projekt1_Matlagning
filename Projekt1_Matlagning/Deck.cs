@@ -2,6 +2,8 @@ using System;
 
 namespace Projekt1_Matlagning;
 
+// Represents the deck used in the game. 
+// When instanse is created, fills deck with full suit of cards.
 public class Deck
 {
     private List<Card> cards;
@@ -12,6 +14,7 @@ public class Deck
         CreateDeck();
     }
 
+    // Adds every combination of suit and number, to fill out the standard 52 cards in a deck. then adds 8 special cards additionally.
     private void CreateDeck()
     {
         string[] suits = { "Spade", "Club", "Diamond", "Heart" };
@@ -23,7 +26,7 @@ public class Deck
                 cards.Add(new Card(suit, i));
             }
         }
-        
+
         // for (int i = 1; i <= 8; i++)
         // {
 
@@ -33,6 +36,7 @@ public class Deck
 
     }
 
+    // Function to shuffle deck into a random order. Takes a card from the deck list and assigns a new order to it with a random position; then swaps the current card, with the card that held that position previously. repeat till deck is fully (un)sorted.
     public void Shuffle()
     {
         Random random = new Random();
@@ -45,6 +49,7 @@ public class Deck
         }
     }
 
+    // take the card at the 'top' of the deck, i.e. in position 0. Then removes it from the deck.
     public Card PickCard()
     {
         Card SelectedCard = cards[0];

@@ -2,8 +2,11 @@ using System;
 
 namespace Projekt1_Matlagning;
 
+//This class represents the active player; child of Player class.
 public class MyPlayer : Player
 {
+
+    // Renders the players hand: displays every card in their possession through the CardFront() method. Also displays which card the player has currently selected.
     public void Render(int index)
     {
 
@@ -42,17 +45,18 @@ public class MyPlayer : Player
 
     }
 
+    // Checks if card played is a Special Card or not, then adds the numerical value of the played card onto the players score. 
     public void PlayCard(int index)
     {
         if (GetCount() > 0)
         {
             Card playedCard = GetCard(index);
             scoreAttribute = playedCard.updateScore(scoreAttribute);
-                RemoveCard(index);
+            RemoveCard(index);
 
-                System.Console.WriteLine($"\nYou played: {playedCard.CardFront()}");
-                System.Console.WriteLine("Press Any Key to end turn.");
-            
+            System.Console.WriteLine($"\nYou played: {playedCard.CardFront()}");
+            System.Console.WriteLine("Press Any Key to end turn.");
+
         }
     }
 
