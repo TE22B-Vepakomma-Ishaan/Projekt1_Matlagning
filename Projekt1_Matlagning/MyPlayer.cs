@@ -48,16 +48,18 @@ public class MyPlayer : Player
     // Checks if card played is a Special Card or not, then adds the numerical value of the played card onto the players score. 
     public void PlayCard(int index)
     {
-        if (GetCount() > 0)
-        {
+        if (GetCount() == 0)
+        {   
+            System.Console.WriteLine("No more cards left.");
+            return;
+        }
+        
             Card playedCard = GetCard(index);
             scoreAttribute = playedCard.updateScore(scoreAttribute);
             RemoveCard(index);
 
             System.Console.WriteLine($"\nYou played: {playedCard.CardFront()}");
             System.Console.WriteLine("Press Any Key to end turn.");
-
-        }
     }
 
 }

@@ -39,6 +39,12 @@ public class Playmat
             Console.Clear();
             Render(player, opponent, index);
 
+
+            if (player.GetCount() == 0 || opponent.GetCount() == 0)
+            {
+                run = false;
+            }
+
             // If player inputs a key not used by the game, displays error message. 
             if (displayError)
             {
@@ -84,9 +90,10 @@ public class Playmat
                     break;
             }
 
+
+
         }
 
-        Console.ReadLine();
     }
     // Renders the visuals for the game. Displays both opponents and players board, as well as the current score. 
     public void Render(Player player, Player opponent, int index)
@@ -94,7 +101,7 @@ public class Playmat
 
        
         opponent.Render(index);
-        
+
         System.Console.WriteLine("");
         System.Console.WriteLine($"Your Opponents score is: {opponent.scoreAttribute}");
         System.Console.WriteLine($"Your score is: {player.scoreAttribute}");

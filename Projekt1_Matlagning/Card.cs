@@ -9,10 +9,10 @@ public class Card
 
     protected int numAttribute;
 
-    public Card(string v_suit, int v_num)
+    public Card(string vSuit, int vNum)
     {
-        suitAttribute = v_suit;
-        numAttribute = v_num;
+        suitAttribute = vSuit;
+        numAttribute = vNum;
     }
 
     public Card()

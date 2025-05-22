@@ -20,8 +20,11 @@ public class MyOpponent : Player
     public void PlayCard()
     {
 
-        if (GetCount() > 0)
-        {
+        if (GetCount() == 0)
+        {   
+            
+            return;
+        }
             Random random = new();
             int randomIndex = random.Next(dealtCards.Count);
             Card playedCard = GetCard(randomIndex);
@@ -32,6 +35,6 @@ public class MyOpponent : Player
             System.Console.WriteLine($"\nOpponent played: {playedCard.CardFront()}");
             System.Console.WriteLine("Press Any Key to start next round.");
 
-        }
+        
     }
 }
