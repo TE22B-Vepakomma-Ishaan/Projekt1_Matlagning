@@ -4,7 +4,7 @@ namespace Projekt1_Matlagning;
 
 public class Deck
 {
-    public List<Card> cards { get; private set; }
+    private List<Card> cards;
 
     public Deck()
     {
@@ -14,21 +14,22 @@ public class Deck
 
     private void CreateDeck()
     {
-        string[] suits = {"Spade", "Club", "Diamond", "Heart" };
+        string[] suits = { "Spade", "Club", "Diamond", "Heart" };
 
         foreach (string suit in suits)
         {
             for (int i = 1; i <= 13; i++)
             {
-                cards.Add(new Card { Suit = suit, Num = i });
+                cards.Add(new Card(suit, i));
             }
         }
-        for (int i = 1; i <= 8; i++)
-        {
+        
+        // for (int i = 1; i <= 8; i++)
+        // {
 
-            cards.Add(new SpecialCard());
+        //     cards.Add(new SpecialCard());
 
-        }
+        // }
 
     }
 
@@ -44,5 +45,11 @@ public class Deck
         }
     }
 
+    public Card PickCard()
+    {
+        Card SelectedCard = cards[0];
+        cards.RemoveAt(0);
+        return SelectedCard;
+    }
 
 }

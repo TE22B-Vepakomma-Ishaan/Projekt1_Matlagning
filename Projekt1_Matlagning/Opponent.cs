@@ -4,10 +4,10 @@ namespace Projekt1_Matlagning;
 
 public class MyOpponent : Player
 {
-    public void Render(int x)
+    public void Render(int index)
     {
         System.Console.WriteLine("┌───────────────────────── Opponent's Hand ───────────────────────┐");
-        for (int i = 0; i < MyHand.Count; i++)
+        for (int i = 0; i < dealtCards.Count; i++)
         {
             Console.Write(" " + Card.CardBack());
         }
@@ -21,23 +21,14 @@ public class MyOpponent : Player
         if (GetCount() > 0)
         {   
             Random random = new();
-            int x = random.Next(MyHand.Count);
-            Card p = GetCard(x);
+            int randomIndex = random.Next(dealtCards.Count);
+            Card playedCard = GetCard(randomIndex);
+            scoreAttribute = playedCard.updateScore(scoreAttribute);
+        
+                RemoveCard(randomIndex);
 
-            if (p.Num != 0)
-            {
-
-                Score += p.Num;
-                RemoveCard(x);
-
-                System.Console.WriteLine($"\nOpponent played: {p.CardFront()}");
+                System.Console.WriteLine($"\nOpponent played: {playedCard.CardFront()}");
                 System.Console.WriteLine("Press Any Key to start next round.");
-
-            }
-            else
-            {
-
-            }
 
         }
     }

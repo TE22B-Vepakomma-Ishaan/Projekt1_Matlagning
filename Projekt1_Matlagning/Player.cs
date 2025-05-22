@@ -4,32 +4,32 @@ namespace Projekt1_Matlagning;
 
 public class Player
 {
-    protected List<Card> MyHand = new();
-    public int Score = 0;
+    protected List<Card> dealtCards = new();
+    public int scoreAttribute = 0;
 
-    protected void Render(int x)
+    protected void Render(int index)
     {
 
     }
 
     public int GetCount()
     {
-        return MyHand.Count;
+        return dealtCards.Count;
     }
 
-    public Card GetCard(int x)
+    public Card GetCard(int index)
     {
-        return MyHand[x];
+        return dealtCards[index];
     }
 
-    public void RemoveCard(int x)
+    public void RemoveCard(int index)
     {
-        MyHand.RemoveAt(x);
+        dealtCards.RemoveAt(index);
     }
 
     public void RecieveCard(Card card)
     {
-        MyHand.Add(card);
+        dealtCards.Add(card);
     }
     protected void PlayCard()
     {   
@@ -37,8 +37,4 @@ public class Player
 
     }
 
-    public void PassTurn()
-    {
-
-    }
 }

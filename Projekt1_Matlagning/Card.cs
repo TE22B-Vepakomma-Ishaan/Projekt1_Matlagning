@@ -4,24 +4,36 @@ namespace Projekt1_Matlagning;
 
 public class Card
 {
-    public string Suit { get; set; }
+    protected string suitAttribute;
 
-    public int Num { get; set; }
+    protected int numAttribute;
 
+    public Card(string v_suit, int v_num)
+    {
+        suitAttribute = v_suit;
+        numAttribute = v_num;
+    }
+
+    public Card()
+    {
+
+    }
+
+    
     public string CardFront()
     {
 
-        string x = Num switch
+        string numberSymbol = numAttribute switch
         {
             0 => "S",
             1 => "A",
             11 => "J",
             12 => "Q",
             13 => "K",
-            _ => Num.ToString()
+            _ => numAttribute.ToString()
         };
 
-        string z = Suit switch
+        string suitSymbol = suitAttribute switch
         {
             "Spade" => "♠",
             "Club" => "♣",
@@ -31,7 +43,7 @@ public class Card
             _ => "?"
         };
 
-        return $"[{z} {x}]";
+        return $"[{suitSymbol} {numberSymbol}]";
     }
 
     public static string CardBack()
@@ -39,6 +51,16 @@ public class Card
         return "[###]";
     }
 
+    public int updateScore(int v_playerScore)
+    {
+        if (numAttribute != 0)
+        {
+            return v_playerScore += numAttribute;
+
+        }
+        return 0;
+      
+    }
 
 
 }
