@@ -11,11 +11,11 @@ public class Playmat
         Deck deck = new();
         deck.Shuffle();
 
-        Player player = new();
-        Player opponent = new();
+        MyPlayer player = new();
+        MyOpponent opponent = new();
 
 
-        for (int i = 0; i < 14; i++)
+        for (int i = 0; i < 10; i++)
         {
 
             player.RecieveCard(deck.cards[0]);
@@ -27,6 +27,7 @@ public class Playmat
 
         int x = 0;
         bool run = true;
+
 
         Playmat playmat = new();
 
@@ -40,7 +41,7 @@ public class Playmat
             switch (consoleKey)
             {
                 case ConsoleKey.RightArrow:
-                    if (x < player.MyHand.Count - 1)
+                    if (x < player.GetCount() - 1)
                     {
                         x++;
                     }
@@ -52,23 +53,11 @@ public class Playmat
                     }
                     break;
                 case ConsoleKey.Enter:
-                    if (player.MyHand.Count > 0)
-                    {
-                        if (player.MyHand[x].Num != 0)
-                        {
-                            Card p = player.MyHand[x];
-                            player.Score += player.MyHand[x].Num;
-                            player.MyHand.RemoveAt(x);
-
-                            System.Console.WriteLine($"\nYou played: {p.CardFront}");
-
-                        }
-                        else
-                        {
-                            
-                        }
-
-                    }
+                    player.PlayCard(x);
+                    
+                    Console.ReadKey();
+                    opponent.PlayCard();
+                    Console.ReadKey();
                     break;
                 case ConsoleKey.Escape:
                     run = false;
@@ -82,56 +71,15 @@ public class Playmat
 
     public void Render(Player player, Player opponent, int x)
     {
-        System.Console.WriteLine("┌───────────────────────── Opponent's Hand ───────────────────────┐");
-        for (int i = 0; i < 2; i++)
-        {
-            Console.Write(" " + Card.CardBack());
-        }
-        for (int i = 2; i < opponent.MyHand.Count; i++)
-        {
-            string z = opponent.MyHand[i].CardFront();
-            System.Console.Write(" " + z);
-        }
-        System.Console.WriteLine("\n└─────────────────────────────────────────────────────────────────┘");
 
-
+        MyOpponent myO = (MyOpponent)opponent;
+        myO.Render(x);
         System.Console.WriteLine("");
+        System.Console.WriteLine($"Your Opponents score is: {opponent.Score}");
         System.Console.WriteLine($"Your score is: {player.Score}");
         System.Console.WriteLine();
 
-
-        System.Console.WriteLine("┌────────────────────────── Your Hand ────────────────────────────┐");
-
-        for (int i = 0; i < player.MyHand.Count; i++)
-        {
-            string z = player.MyHand[i].CardFront();
-            if (i == x)
-            {
-                System.Console.Write($"{" "}^{z}^ ");
-
-            }
-            else
-            {
-                System.Console.Write(" " + z);
-            }
-        }
-        System.Console.WriteLine("\n└─────────────────────────────────────────────────────────────────┘");
-        System.Console.WriteLine("Use ◄ ► to move. Press Enter to play. Esc to quit.");
-        System.Console.WriteLine();
-
-        Card SPCard = player.MyHand[x];
-
-        if (SPCard is SpecialCard specialCard)
-        {
-            string Desc = specialCard.SP switch
-            {
-                1 => "Steal a random card from your opponent.",
-                2 => "Shows top three cards in the deck; can select 1.",
-                3 => "Swap one card of choice with opponent.",
-                _ => "?"
-            };
-
-            Console.WriteLine($" -- Special Card Effect: {Desc} --");
-        }
+        MyPlayer myP = (MyPlayer)player;
+        myP.Render(x);
     }
 }

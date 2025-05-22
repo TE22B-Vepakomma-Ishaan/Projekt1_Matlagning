@@ -4,15 +4,34 @@ namespace Projekt1_Matlagning;
 
 public class Player
 {
-    public List<Card> MyHand = new();
+    protected List<Card> MyHand = new();
     public int Score = 0;
 
+    protected void Render(int x)
+    {
+
+    }
+
+    public int GetCount()
+    {
+        return MyHand.Count;
+    }
+
+    public Card GetCard(int x)
+    {
+        return MyHand[x];
+    }
+
+    public void RemoveCard(int x)
+    {
+        MyHand.RemoveAt(x);
+    }
 
     public void RecieveCard(Card card)
     {
         MyHand.Add(card);
     }
-    public void PlayCard()
+    protected void PlayCard()
     {   
 
 
