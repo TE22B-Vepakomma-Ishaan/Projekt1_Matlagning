@@ -7,7 +7,7 @@ public class MyPlayer : Player
 {
 
     // Renders the players hand: displays every card in their possession through the CardFront() method. Also displays which card the player has currently selected.
-    public void Render(int index)
+    public override void Render(int index)
     {
 
         System.Console.WriteLine("┌────────────────────────── Your Hand ────────────────────────────┐");

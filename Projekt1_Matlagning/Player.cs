@@ -29,7 +29,7 @@ public class Player
     }
 
     // ------Shell for Child to inherit -----
-    protected void Render(int index)
+    public virtual void Render(int index)
     {
 
     }

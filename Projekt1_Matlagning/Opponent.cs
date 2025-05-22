@@ -6,7 +6,7 @@ namespace Projekt1_Matlagning;
 public class MyOpponent : Player
 {   
     // Renders the opponents hand, cards are hidden and only show the back though.
-    public void Render(int index)
+    public override void Render(int index)
     {
         System.Console.WriteLine("┌───────────────────────── Opponent's Hand ───────────────────────┐");
         for (int i = 0; i < dealtCards.Count; i++)

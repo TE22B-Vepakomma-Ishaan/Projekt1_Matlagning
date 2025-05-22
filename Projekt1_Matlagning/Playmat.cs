@@ -92,15 +92,16 @@ public class Playmat
     public void Render(Player player, Player opponent, int index)
     {
 
-        MyOpponent myO = (MyOpponent)opponent;
-        myO.Render(index);
+       
+        opponent.Render(index);
+        
         System.Console.WriteLine("");
         System.Console.WriteLine($"Your Opponents score is: {opponent.scoreAttribute}");
         System.Console.WriteLine($"Your score is: {player.scoreAttribute}");
         System.Console.WriteLine();
 
-        MyPlayer myP = (MyPlayer)player;
-        myP.Render(index);
+        
+        player.Render(index);
 
     }
 
